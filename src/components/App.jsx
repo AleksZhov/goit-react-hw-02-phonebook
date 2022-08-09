@@ -44,16 +44,14 @@ export class App extends Component {
   render() {
     return (
       <div
-        style={
-          {
-            // display: 'flex',
-            // flexDirection: 'column',
-            // justifyContent: 'center',
-            // alignItems: 'center',
-            // fontSize: 40,
-            // color: '#010101',
-          }
-        }
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: 30,
+          color: '#010101',
+        }}
       >
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />

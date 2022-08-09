@@ -1,15 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ContactList.css';
 function ContactList({ contactsArray, onDelete }) {
   return (
-    <ul>
+    <ul className="contacts">
       {contactsArray.map(({ name, number, id }) => {
         return (
-          <li key={number}>
+          <li key={number} className="contacts__item">
             <p>
-              {name}:{number}
+              • {name} : {number}
             </p>
-            <button type="button" onClick={() => onDelete(id)}>
+            <button
+              type="button"
+              className="contacts__del-btn"
+              onClick={() => onDelete(id)}
+            >
               Delete
             </button>
           </li>
