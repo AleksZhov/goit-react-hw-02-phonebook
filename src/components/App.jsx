@@ -17,9 +17,17 @@ export class App extends Component {
   addContact = data => {
     const contactObject = {
       id: nanoid(),
-      name: data.name,
-      number: data.number,
+      name: data.name.trim(),
+      number: data.number.trim(),
     };
+    if (
+      this.state.contacts.some(
+        contact => contact.name === contactObject.name.trim()
+      )
+    ) {
+      alert(` ${contactObject.name} is already in contacts`);
+      return;
+    }
     this.setState({ contacts: [contactObject, ...this.state.contacts] });
   };
 
